@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.Promise = globlal.Promise;
+mongoose.Promise = global.Promise;
 
 const modelSchema = new mongoose.Schema({
     idUser: String,
@@ -9,8 +9,8 @@ const modelSchema = new mongoose.Schema({
     dateCreated: Date,
     title: String,
     price: Number,
-    priceNegociable: Boolean,
-    description: String,
+    priceNegotiable: Boolean,
+    decription: String,
     views: Number,
     status: String
 });

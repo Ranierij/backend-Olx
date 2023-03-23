@@ -2,9 +2,11 @@ const User = require('../models/User');
 
 module.exports = {
     private: async (req, res, next) => {
-        next();
+        //res.json({ notallowed: true });
+        //return;
         if (!req.query.token && !req.body.token) {
             res.json({ notallowed: true });
+            return;
         }
         let token = '';
         if (req.query.token) {
@@ -18,10 +20,10 @@ module.exports = {
             return;
         }
         const user = await User.findOne({ token });
-        if ((!user)) {
+        if (!user) {
             res.json({ invalidtoken: true });
             return;
         }
         next();
     }
-}
+};
