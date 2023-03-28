@@ -1,7 +1,7 @@
-const { checkShema } = require('express-validator');
+const { checkSchema } = require('express-validator');
 
 module.exports = {
-    signup: checkShema({
+    signup: checkSchema({
         name: {
             trim: true,
             isLength: {
@@ -25,7 +25,7 @@ module.exports = {
             errorMessage: "Estado não preenchido"
         }
     }),
-    signin: checkShema({
+    signin: checkSchema({
         email: {
             isEmail: true,
             normalizeEmail: true,

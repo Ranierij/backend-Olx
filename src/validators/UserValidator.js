@@ -1,7 +1,7 @@
-const { checkShema } = require('express-validator');
+const { checkSchema } = require('express-validator');
 
 module.exports = {
-    editAction: checkShema({
+    editAction: checkSchema({
         token: {
             notEmpty: true
         },
